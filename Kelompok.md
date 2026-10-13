@@ -1,5 +1,5 @@
 # Proyek 1 ASD
 Kelas : 
-1. Nama Mhs 1, NIM Mhs 1
-2. Nama Mhs 2, NIM Mhs 2
-2. Nama Mhs 3, NIM Mhs 3
+1. Senja Cahya Tirta, 255150200111016
+2. Naufal Mohammad Adhi, 255150207111018
+2. Phaksi Giring Pamungkas, 255150207111034
