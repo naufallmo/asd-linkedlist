@@ -117,12 +117,38 @@ public class SinglyLinkedList implements LinkedList{
     @Override
     public Object get(int index) {
         // TODO digunakan untuk mengembalikan data pada index ke-i dimulai dari head. Head memiliki index 0
-        return null;
+        if(index < 0 || index >= size) {
+            System.err.println("Index tidak valid");
+        }
+        
+        Node currentNode = head;
+        for(int i = 0; i < index; i++) {
+            currentNode = currentNode.pointer;
+        }
+        return currentNode.data;
     }
     @Override
     public int indexOf(Object targetData) {
         // TODO digunakan mencari kemunculan pertama targetData pada linked list dan mengembalikan indeksnya. Indeks dari head adalah 0. Jika tidak ada targetData pada linked list, kembalikan nilai -1 
-        return 0;
+        Node currentNode = head;
+        int index = 0;
+
+        while(currentNode != null) {
+            if(targetData == null) {
+                if(currentNode.data == null) {
+                    return index;
+                }
+            } else {
+                if(targetData.equals(currentNode.data)) {
+                    return index;
+                }
+            }
+
+            currentNode = currentNode.pointer;
+            index++;
+        }
+
+        return -1;
     }
     @Override
     public void printReverse() {
