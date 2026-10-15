@@ -132,6 +132,34 @@ public class SinglyLinkedList implements LinkedList{
     @Override
     public boolean remove(Object targetData) {
         // TODO digunakan untuk mencari dan menghapus node dengan data=targetData pada linked list serta mengembalikan nilai True jika berhasil, dan False jika targetData tidak ada di linkedList
+        if (isEmpty()) {
+            System.err.println("Linked list kosong");
+            return false;
+        }
+        
+        if (head.data.equals(targetData)) {
+            head = head.pointer;
+
+            if (head == null) {
+                tail = null;
+            }
+            size--;
+            return true;
+        }
+
+        Node current = head;
+        while (current.pointer != null) {
+            if (current.pointer.data.equals(targetData)) {
+                current.pointer = current.pointer.pointer;
+
+                if (current.pointer == null) {
+                    tail = current;
+                }
+                size--;
+                return true;
+            }
+            current = current.pointer;
+        }
         return false;
     }
     @Override
