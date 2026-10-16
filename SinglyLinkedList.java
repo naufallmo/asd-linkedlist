@@ -51,6 +51,11 @@ public class SinglyLinkedList implements LinkedList{
         }
         baru.pointer = C.pointer;
         C.pointer = baru;
+
+        if(tail == C) {
+            tail = baru;
+        }
+        size++; 
     }
 
     public void deleteFirst(){
@@ -79,7 +84,7 @@ public class SinglyLinkedList implements LinkedList{
         }
         else{
             Node temp = head;
-            for(int i=1;i<size;i++){
+            for(int i=1;i<size-1;i++){
                 temp = temp.pointer;
             }
             tail = temp;
