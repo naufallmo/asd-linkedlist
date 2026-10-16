@@ -158,7 +158,10 @@ public class SinglyLinkedList implements LinkedList{
     @Override
     public void printReverse() {
         // TODO digunakan untuk mencetak data pada linked list dengan urutan terbalik, dari tail ke head.
-        
+        Object[] data = toArray();
+        for (int i = data.length - 1; i >= 0; i--) {
+            System.out.println(data[i]);
+        }
     }
     @Override
     public boolean remove(Object targetData) {
@@ -196,6 +199,12 @@ public class SinglyLinkedList implements LinkedList{
     @Override
     public Object[] toArray() {
         // TODO digunakan untuk mendapatkan keseluruhan data pada node-node di linked list dalam bentuk array. Data-data pada array disusun secara urut mulai dari head sampai dengan tail.
-        return null;
+        Object[] result = new Object[size];
+        Node currentNode = head;
+        for (int i = 0; i < size; i++) {
+            result[i] = currentNode.data;
+            currentNode = currentNode.pointer;
+        }
+        return result;
     }
 }
